@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Firebase Configuration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2>How to Get Your Firebase Configuration</h2>
+        <p>To use Firebase Cloud Messaging, you need to provide your Firebase project's configuration details. Here's
+            how to find them:</p>
+        <ol>
+            <li>Go to the <a href="https://console.firebase.google.com/" target="_blank">Firebase Console</a> and log in
+                with your Google account.</li>
+            <li>Select your Firebase project. If you don't have one, you'll need to create a new project.</li>
+            <li>In the left sidebar, navigate to <strong>Project settings</strong> (the gear icon next to "Project
+                Overview").</li>
+            <li>In the "General" tab, scroll down to the "Your apps" section.</li>
+            <li>If you haven't added a web app yet, click the <strong>Web</strong> (</>) icon to add one. You'll be
+                prompted to give it a nickname (you can choose any name). Click "Register app".</li>
+            <li>Once you've added a web app (or if you already had one), click on the web app in the "Your apps"
+                section.</li>
+            <li>A configuration snippet will appear. Look for the <code>firebaseConfig</code> object. This object
+                contains the following keys and values that you need to copy into the respective fields on the main
+                page:
+                <ul>
+                    <li><strong>apiKey:</strong> Your API key.</li>
+                    <li><strong>authDomain:</strong> Your project's Auth domain.</li>
+                    <li><strong>projectId:</strong> Your unique project ID.</li>
+                    <li><strong>storageBucket:</strong> Your project's Cloud Storage bucket (may be empty).</li>
+                    <li><strong>messagingSenderId:</strong> Your project's Messaging Sender ID.</li>
+                    <li><strong>appId:</strong> Your web app's unique App ID.</li>
+                    <li><strong>measurementId:</strong> Your project's Measurement ID (usually starts with "G-").</li>
+                </ul>
+            </li>
+            <li><strong>VAPID Key for Web Push (Voluntary Application Server Identification):</strong>
+                <ul>
+                    <li>In the left sidebar of the Firebase Console, go to <strong>Project settings</strong>.</li>
+                    <li>Navigate to the <strong>Cloud Messaging</strong> tab.</li>
+                    <li>Scroll down to the "Web push certificates" section.</li>
+                    <li>You'll see a "Default web push certificate". If a key pair hasn't been generated yet, click the
+                        "Generate Key Pair" button.</li>
+                    <li>Copy the string under "Public key" and paste it into the <strong>VAPID Key</strong> field on the
+                        main page.</li>
+                </ul>
+            </li>
+            <li>Once you have copied all the necessary configuration details, navigate back to the <a
+                    href="index.html">main testing page</a> and paste the values into the corresponding input fields.
+                Then, click "Continue To Testing".</li>
+        </ol>
+    </div>
+</body>
+
+</html>

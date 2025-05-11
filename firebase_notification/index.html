@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Messaging Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" id="home-link">
+                <span style="font-size: 1.2em; font-weight: 500;">Home</span>
+            </a>
+            <div class="navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" id="history-link" href="#">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="get_firebase_config.html">
+                            Guideline
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 id="main-title">Firebase Cloud Messaging Test</h1>
+
+        <div id="config-inputs">
+            <div class="form-group">
+                <label for="apiKey">API Key:</label>
+                <input type="text" class="form-control" id="apiKey" placeholder="YOUR_API_KEY" value="">
+                <div id="apiKey-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="authDomain">Auth Domain:</label>
+                <input type="text" class="form-control" id="authDomain" placeholder="YOUR_AUTH_DOMAIN" value="">
+                <div id="authDomain-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="projectId">Project ID:</label>
+                <input type="text" class="form-control" id="projectId" placeholder="YOUR_PROJECT_ID" value="">
+                <div id="projectId-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="storageBucket">Storage Bucket:</label>
+                <input type="text" class="form-control" id="storageBucket" placeholder="YOUR_STORAGE_BUCKET" value="">
+                <div id="storageBucket-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="messagingSenderId">Messaging Sender ID:</label>
+                <input type="text" class="form-control" id="messagingSenderId" placeholder="YOUR_SENDER_ID" value="">
+                <div id="messagingSenderId-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="appId">App ID:</label>
+                <input type="text" class="form-control" id="appId" placeholder="YOUR_APP_ID" value="">
+                <div id="appId-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="measurementId">Measurement ID:</label>
+                <input type="text" class="form-control" id="measurementId" placeholder="YOUR_MEASUREMENT_ID" value="">
+                <div id="measurementId-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="vapidKey">VAPID Key:</label>
+                <input type="text" class="form-control" id="vapidKey" placeholder="YOUR_VAPID_KEY" value="">
+                <div id="vapidKey-error" class="error-message"></div>
+            </div>
+            <button class="btn btn-primary" id="continue-button">Continue To Testing</button>
+            <!-- <button class="btn btn-secondary" id="get-config-button">Get Config</button> -->
+            <button class="btn btn-danger" id="reset-button">Reset</button>
+        </div>
+
+        <div id="testing-area" style="display: none;">
+            <div id="message-container">
+                <p>Waiting for permission...</p>
+            </div>
+            <button id="permission-button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-title="Reload page to fix error">
+                Request Notification Permission
+            </button>
+            <div id="token-display"></div>
+        </div>
+
+        <div id="history-area" style="display: none;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Body</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody id="notification-history-body">
+                </tbody>
+            </table>
+            <button class="btn btn-secondary" id="back-to-test-button">Back to Test</button>
+        </div>
+    </div>
+
+    <div id="notification-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="toast-title" id="toast-title"></strong>
+            <button type="button" class="toast-close-button" id="toast-close-button" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body" id="toast-body"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-messaging-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
