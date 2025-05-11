@@ -101,17 +101,17 @@ continueButton.addEventListener("click", () => {
   }
 });
 
-getConfigButton.addEventListener("click", () => {
-  const config = firebaseConfig;
-  apiKeyInput.value = config.apiKey;
-  authDomainInput.value = config.authDomain;
-  projectIdInput.value = config.projectId;
-  storageBucketInput.value = config.storageBucket;
-  messagingSenderIdInput.value = config.messagingSenderId;
-  appIdInput.value = config.appId;
-  measurementIdInput.value = config.measurementId;
-  vapidKeyInput.value = YOUR_VAPID_KEY;
-});
+// getConfigButton.addEventListener("click", () => {
+//   const config = firebaseConfig;
+//   apiKeyInput.value = config.apiKey;
+//   authDomainInput.value = config.authDomain;
+//   projectIdInput.value = config.projectId;
+//   storageBucketInput.value = config.storageBucket;
+//   messagingSenderIdInput.value = config.messagingSenderId;
+//   appIdInput.value = config.appId;
+//   measurementIdInput.value = config.measurementId;
+//   vapidKeyInput.value = YOUR_VAPID_KEY;
+// });
 
 resetButton.addEventListener("click", () => {
   resetApp();
