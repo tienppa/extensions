@@ -395,4 +395,6 @@ function createHistoryRow(notification) {
   titleCell.textContent = notification.title;
   bodyCell.textContent = notification.body;
   timestampCell.textContent = new Date(notification.timestamp).toLocaleString();
+
+  bodyCell.style.wordBreak = "break-all";
 }
